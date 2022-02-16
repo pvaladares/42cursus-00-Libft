@@ -1,26 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 11:23:40 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/14 12:51:58 by pvaladar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+// ISALPHA(3)                 Library Functions Manual                ISALPHA(3)
+//
+// NAME
+//      isalpha – alphabetic character test
+//
+// LIBRARY
+//      Standard C Library (libc, -lc)
+//
 // SYNOPSIS
 //      #include <ctype.h>
+//
 //      int isalpha(int c);
 //
 // DESCRIPTION
 //      The isalpha() function tests for any character for which isupper(3) or 
-//	islower(3) is true.  The value of the argument must
-//      be representable as an unsigned char or the value of EOF.
+//		islower(3) is true.  The value of the argument must be representable 
+//		as an unsigned char or the value of EOF.
 //
 //      In the ASCII character set, this includes the following characters 
-//	(preceded by their numeric values, in octal):
+//		(preceded by their numeric values, in octal):
 //
 //      101 ``A''     102 ``B''     103 ``C''     104 ``D''     105 ``E''
 //      106 ``F''     107 ``G''     110 ``H''     111 ``I''     112 ``J''
@@ -36,7 +33,7 @@
 //
 // RETURN VALUES
 //      The isalpha() function returns zero if the character tests false and 
-//	returns non-zero if the character tests true.
+//		returns non-zero if the character tests true.
 
 int	ft_isalpha(int c)
 {

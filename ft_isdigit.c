@@ -1,15 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 11:23:40 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/14 12:56:01 by pvaladar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+// ISDIGIT(3)                 Library Functions Manual                ISDIGIT(3)
+//
+// NAME
+//      isdigit, isnumber – decimal-digit character test
+//
+// LIBRARY
+//      Standard C Library (libc, -lc)
+//
 // SYNOPSIS
 //      #include <ctype.h>
 //
@@ -24,14 +20,15 @@
 //      ``5''         ``6''         ``7''         ``8''         ``9''
 //
 //      The isnumber() function behaves similarly to isdigit(), but may 
-//	recognize additional characters, depending on the current locale setting.
+//		recognize additional characters, depending on the current locale
+//		setting.
 //
 //      The value of the argument must be representable as an unsigned char or 
-//	the value of EOF.
+//		the value of EOF.
 //
 // RETURN VALUES
 //      The isdigit() and isnumber() functions return zero if the character 
-//	tests false and return non-zero if the character tests true.
+//		tests false and return non-zero if the character tests true.
 
 int	ft_isdigit(int c)
 {
