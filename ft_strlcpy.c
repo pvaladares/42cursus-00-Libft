@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 10:53:14 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/16 17:27:19 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/02/16 23:09:56 by pv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,16 +107,6 @@
 //		As a matter of fact, the first version of this manual page got it wrong.
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
-
-static int	ft_strlen(const char *restrict str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {

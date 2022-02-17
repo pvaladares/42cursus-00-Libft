@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:15 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/16 16:39:13 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/02/17 13:06:09 by pv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,38 @@
 // ERRORS
 //      The function atoi() need not affect the value of errno on an error.
 
+#include "libft.h"
+#include <stdio.h>
+#include <limits.h>
+
+// Code to handle over long max value (LLONG_MAX) & min value (LLONG_MIN)
+// LLONG_MIN = 9223372036854775808 | LLONG_MAX = 9223372036854775807
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	sign;
+	int					i;
+	int					sign;
+	unsigned long int	result;
 
-	i = 0;
-	result = 0;
 	sign = 1;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	result = 0;
+	i = 0;
+	while ((*(str + i) >= '\t' && *(str + i) <= '\r') || *(str + i) == ' ')
 		i++;
-	if (str[i] == '+')
-		i++;
-	if (str[i] == '-')
+	if (*(str + i) == '-')
 	{
 		sign = -sign;
 		i++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	if (*(str + i) == '+')
+		i++;
+	while (*(str + i) && ft_isdigit(*(str + i)))
 	{
-			result = result * 10 + str[i] - '0';
-			i++;
+		if (result >= 9223372036854775807 && sign == 1)
+			return (-1);
+		else if (result > 9223372036854775807 && sign == -1)
+			return (0);
+		result = (result * 10) + (*(str + i) - '0');
+		i++;
 	}
-	return (result * sign);
+	return ((int)(result * sign));
 }
