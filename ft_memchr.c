@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 11:26:47 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 11:27:07 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // MEMCHR(3)                 Library Functions Manual                 MEMCHR(3)
 //
 // NAME
@@ -33,5 +45,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)(s + i));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 11:27:19 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 11:27:59 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // MEMCMP(3)                Library Functions Manual                MEMCMP(3)
 //
 // NAME
@@ -20,9 +32,10 @@
 //      The memcmp() function returns zero if the two strings are identical, 
 //		otherwise returns the difference between the first two differing bytes 
 //		(treated as unsigned char values, so that ‘\200’ is greater than ‘\0’,
-//		 for example).  Zero-length strings are always identical.  
+//		for example).
+//		Zero-length strings are always identical.  
 //		This behavior is not required by C and portable code should only depend
-//		 on the sign of the returned value.
+//		on the sign of the returned value.
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
 

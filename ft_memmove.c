@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 10:55:30 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 12:16:11 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // MEMMOVE(3)                Library Functions Manual                MEMMOVE(3)
 //
 // NAME
@@ -21,7 +33,6 @@
 //      The memmove() function returns the original value of dst.
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
-// [crash]: your memmove crash because it read too many bytes or attempt to read on dst !
 
 // To be noted that MEMCPY(3) mentions the following:
 // Applications in which dst and src might overlap should use memmove(3) 
@@ -29,29 +40,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	char		*dst_aux;
+	char		*src_aux;
+	char		*dst_last;
+	char		*src_last;
 
-	tmp = (char *)malloc(sizeof(char) * len);
-	if (tmp == NULL)
+	if (!dst && !src)
 		return (NULL);
-	ft_memcpy(tmp, src, len);
-	ft_memcpy(dst, tmp, len);
-	free(tmp);
+	dst_aux = (char *)dst;
+	src_aux = (char *)src;
+	if (dst_aux < src_aux)
+		while (len--)
+			*dst_aux++ = *src_aux++;
+	else
+	{
+		dst_last = dst_aux + (len - 1);
+		src_last = src_aux + (len - 1);
+		while (len--)
+			*dst_last-- = *src_last--;
+	}
 	return (dst);
 }
-
-/*
-[crash]: your memmove crash because it read too many bytes or attempt to read on dst !
-Test code:
-        int size = 10;
-        char *dst = electric_alloc(size);
-        char *data = electric_alloc(size);
-
-        __builtin___memset_chk (data, 'A', size, __builtin_object_size (data, 0));
-        ft_memmove(dst, data, size);
-        dst = electric_alloc_rev(size);
-        data = electric_alloc_rev(size);
-        __builtin___memset_chk (data, 'A', size, __builtin_object_size (data, 0));
-        ft_memmove(dst, data, size);
-        exit(TEST_SUCCESS);
-*/

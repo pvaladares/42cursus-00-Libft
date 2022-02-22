@@ -1,18 +1,5 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: pv <pv@student.42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/02 10:51:42 by pvaladar          #+#    #+#              #
-#    Updated: 2022/02/21 23:56:56 by pv               ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 # Based on intra video, C Piscine - C 09, C 11
 # https://elearning.intra.42.fr/notions/c-piscine-c-09-c-11/subnotions/makefile-example/videos/makefile-example
-
 
 # use cc, and your Makefile must not relink.
 CC		= cc
@@ -25,8 +12,13 @@ INCS	= libft.h
 LIB1	= ar rc
 LIB2	= ranlib
 
+# =============================================================================
+#								MANDATORY PART
+# =============================================================================
+
+# command to quickly get the filenames
 # ls -l *.c | awk -F ' ' '{print $9}'
-SRCS	= ft_atoi.c \
+SRCS	= 	ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
@@ -41,25 +33,31 @@ SRCS	= ft_atoi.c \
 			ft_memcpy.c \
 			ft_memmove.c \
 			ft_memset.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_split.c \
 			ft_strchr.c \
 			ft_strdup.c \
+			ft_striteri.c \
 			ft_strjoin.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
+			ft_strmapi.c \
 			ft_strncmp.c \
 			ft_strnstr.c \
 			ft_strrchr.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c \
+			ft_toupper.c
 
 OBJS	= ${SRCS:.c=.o}
 
 # Your Makefile must at least contain the rules 
 # $(NAME), all, clean, fclean and re.
-# Redirects to the next rule
 all:		$(NAME)
 
 # Compile the sources (*.c) to object files (*.o)

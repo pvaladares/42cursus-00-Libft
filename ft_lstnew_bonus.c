@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 11:23:44 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 17:21:06 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 // Function name    | ft_lstnew
 // Prototype        | t_list *ft_lstnew(void *content);
@@ -17,8 +28,11 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
-	if (!(new))
+	if (!new)
+	{
+		errno = ENOMEM;
 		return (NULL);
+	}
 	new->content = content;
 	new->next = NULL;
 	return (new);

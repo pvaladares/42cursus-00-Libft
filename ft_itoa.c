@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 15:28:34 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 00:11:56 by pv               ###   ########.fr       */
+/*   Updated: 2022/02/22 11:25:07 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+// Function name    | ft_itoa
+// Prototype        | char *ft_itoa(int n);
+// Turn in files    | -
+// Parameters       | n: the integer to convert.
+// Return value     | The string representing the integer. 
+//					| NULL if the allocation fails.
+// External functs. | malloc
+// Description      | Allocates (with malloc(3)) and returns a string 
+//					| representing the integer received as an argument. 
+//					| Negative numbers must be handled.
+
+#include "libft.h" // size_t is defined in header <stdlib.h>
 
 // Function returns the length of a number, including the '-' sign
 static int	ft_len(long n)

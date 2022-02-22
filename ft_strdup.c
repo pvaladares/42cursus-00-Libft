@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 12:29:00 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 14:15:19 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // STRDUP(3)                Library Functions Manual                STRDUP(3)
 //
 // NAME
@@ -27,15 +39,18 @@
 //      The strndup() function copies at most n characters from the string s1 
 //		always NUL terminating the copied string.
 
-#include "libft.h"
+#include "libft.h" // errno & NULL definitions
 
 char	*ft_strdup(const char *s1)
 {
-	char	*s2;
+	char	*aux;
 
-	s2 = (char *)malloc(ft_strlen(s1) + 1);
-	if (!s2)
-		return (0);
-	ft_memcpy(s2, s1, ft_strlen(s1) + 1);
-	return (s2);
+	aux = (char *)malloc(ft_strlen(s1) + 1);
+	if (!aux)
+	{
+		errno = ENOMEM;
+		return (NULL);
+	}
+	ft_memcpy(aux, s1, ft_strlen(s1) + 1);
+	return (aux);
 }

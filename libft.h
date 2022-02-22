@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:12:52 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/21 00:05:54 by pv               ###   ########.fr       */
+/*   Updated: 2022/02/22 17:18:26 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// size_t @ ft_memset, ft_strncmp, ft_strlcpy, ft_bzero, ft_memcpy, ft_strlen
-// ft_memmove, ft_memchr, ft_memcmp
-# include <stdlib.h> 
-# include <limits.h> // ft_atoi
+# include <stdlib.h> // definition of size_t and NULL (e.g.: ft_memset)
+# include <limits.h> // definition of INT_MAX (ft_atoi)
+# include <errno.h> // definition of error codes (e.g.: ft_calloc)
+# include <unistd.h> // ft_putchar_fd
 
-// Part 1 - Libc functions
+// Part 1 - Libc functions (ordered as shown in the subject file)
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
-int		ft_isdigit(int c);
+int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -34,7 +34,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-char	*strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -58,13 +58,11 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 // Bonus part
-
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

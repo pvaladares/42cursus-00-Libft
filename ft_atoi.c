@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:15 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/21 11:21:27 by pv               ###   ########.fr       */
+/*   Updated: 2022/02/22 11:06:43 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 
 #include "libft.h"
 
-// Now handles extreme cases, spotted after running lib-unit-test batch
+// Now handles extreme cases, spotted after running lib-unit-test
 // [KO]: your atoi does not work with over long max value
 // [KO]: your atoi does not work with over long min value
 //

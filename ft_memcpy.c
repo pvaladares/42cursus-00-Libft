@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:30:29 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/17 13:03:27 by pv               ###   ########.fr       */
+/*   Updated: 2022/02/22 12:07:30 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	i = 0;
 	if (!dst && !src)
-		return (0);
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];

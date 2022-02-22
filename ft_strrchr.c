@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 13:40:59 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 13:47:39 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // STRCHR(3)                 Library Functions Manual                 STRCHR(3)
 //
 // NAME
@@ -17,7 +29,7 @@
 //
 // DESCRIPTION
 //      The strchr() function locates the first occurrence of c (converted to a
-//		 char) in the string pointed to by s.  
+//		char) in the string pointed to by s.  
 //		The terminating null character is considered to be part of the string; 
 //		therefore if c is ‘\0’, the functions locate the terminating ‘\0’.
 //
@@ -32,15 +44,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int			i;
 	const char	*aux;
 
-	aux = s;
-	i = ft_strlen(s);
-	s = (s + i);
-	while (*s != *aux && *s != c)
-		s--;
-	if (*s == c)
-		return ((char *)s);
-	return (0);
+	aux = s + ft_strlen(s);
+	while (*aux != *s && *aux != c)
+		aux--;
+	if (*aux == c)
+		return ((char *)aux);
+	return (NULL);
 }

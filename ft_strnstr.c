@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 12:35:26 by pvaladar          #+#    #+#             */
+/*   Updated: 2022/02/22 13:40:35 by pvaladar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // STRSTR(3)                Library Functions Manual                STRSTR(3)
 //
 // NAME
@@ -66,28 +78,28 @@
 //
 //            ptr = strnstr(largestring, smallstring, 4);
 
-#include "libft.h"
+#include "libft.h" // size_t is defined in header <stdlib.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	h;
-	size_t	n;
+	size_t	i;
+	size_t	j;
 
-	h = 0;
+	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while (haystack[h] != '\0')
+	while (haystack[i])
 	{
-		n = 0;
-		while (haystack[h + n] == needle[n] && (h + n) < len)
+		j = 0;
+		while (needle[j] == haystack[i + j] && (i + j) < len)
 		{
-			if (haystack[h + n] == '\0' && needle[n] == '\0')
-				return ((char *)&haystack[h]);
-			n++;
+			if (haystack[i + j] == '\0' && needle[j] == '\0')
+				return ((char *)&haystack[i]);
+			j++;
 		}
-		if (needle[n] == '\0')
-			return ((char *)haystack + h);
-		h++;
+		if (needle[j] == '\0')
+			return ((char *)&haystack[i]);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
