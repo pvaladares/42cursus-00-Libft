@@ -6,7 +6,7 @@
 /*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:15 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/17 13:06:09 by pv               ###   ########.fr       */
+/*   Updated: 2022/02/21 11:21:27 by pv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,37 +49,49 @@
 //      The function atoi() need not affect the value of errno on an error.
 
 #include "libft.h"
-#include <stdio.h>
-#include <limits.h>
 
-// Code to handle over long max value (LLONG_MAX) & min value (LLONG_MIN)
-// LLONG_MIN = 9223372036854775808 | LLONG_MAX = 9223372036854775807
+// Now handles extreme cases, spotted after running lib-unit-test batch
+// [KO]: your atoi does not work with over long max value
+// [KO]: your atoi does not work with over long min value
+//
+// INT_MAX =  2147483647 = 0x7FFFFFFF =  2^31 - 1
+// Binary representation: 
+// 0111 1111 1111 1111 1111 1111 1111 1111
+// 31                  15                0
+//
+// INT_MIN = -2147483648 = 0xFFFFFFFF = -2^31
+// Binary representation: 
+// 1111 1111 1111 1111 1111 1111 1111 1111
+// 31                  15                0
+//
+// From https://man7.org/linux/man-pages/man3/atoi.3.html
+// RETURN VALUE         top
+//       The converted value or 0 on error.
+
 int	ft_atoi(const char *str)
 {
-	int					i;
-	int					sign;
-	unsigned long int	result;
+	int				sign;
+	unsigned int	result;
 
 	sign = 1;
 	result = 0;
-	i = 0;
-	while ((*(str + i) >= '\t' && *(str + i) <= '\r') || *(str + i) == ' ')
-		i++;
-	if (*(str + i) == '-')
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
+		str++;
+	if (*str == '-')
 	{
 		sign = -sign;
-		i++;
+		str++;
 	}
-	if (*(str + i) == '+')
-		i++;
-	while (*(str + i) && ft_isdigit(*(str + i)))
+	if (*str == '+')
+		str++;
+	while (*str && (*str >= '0' && *str <= '9'))
 	{
-		if (result >= 9223372036854775807 && sign == 1)
+		result = (result * 10) + (*str - '0');
+		if (result > (unsigned int)INT_MAX && sign == 1)
 			return (-1);
-		else if (result > 9223372036854775807 && sign == -1)
+		else if (result > (unsigned int)INT_MIN && sign == -1)
 			return (0);
-		result = (result * 10) + (*(str + i) - '0');
-		i++;
+		str++;
 	}
 	return ((int)(result * sign));
 }

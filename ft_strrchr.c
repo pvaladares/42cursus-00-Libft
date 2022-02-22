@@ -33,14 +33,14 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int			i;
-	const char	*ini;
+	const char	*aux;
 
-	ini = s;
+	aux = s;
 	i = ft_strlen(s);
 	s = (s + i);
-	while (*s != *ini && c != *s)
+	while (*s != *aux && *s != c)
 		s--;
-	if (c == *s)
+	if (*s == c)
 		return ((char *)s);
 	return (0);
 }

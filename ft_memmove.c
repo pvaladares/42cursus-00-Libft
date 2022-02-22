@@ -21,30 +21,37 @@
 //      The memmove() function returns the original value of dst.
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
+// [crash]: your memmove crash because it read too many bytes or attempt to read on dst !
+
+// To be noted that MEMCPY(3) mentions the following:
+// Applications in which dst and src might overlap should use memmove(3) 
+// instead.
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	char	*tmp;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	if ((size_t)dst - (size_t)src >= len)
-	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	else
-	{
-		i = len - 1;
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
-	}
+	tmp = (char *)malloc(sizeof(char) * len);
+	if (tmp == NULL)
+		return (NULL);
+	ft_memcpy(tmp, src, len);
+	ft_memcpy(dst, tmp, len);
+	free(tmp);
 	return (dst);
 }
+
+/*
+[crash]: your memmove crash because it read too many bytes or attempt to read on dst !
+Test code:
+        int size = 10;
+        char *dst = electric_alloc(size);
+        char *data = electric_alloc(size);
+
+        __builtin___memset_chk (data, 'A', size, __builtin_object_size (data, 0));
+        ft_memmove(dst, data, size);
+        dst = electric_alloc_rev(size);
+        data = electric_alloc_rev(size);
+        __builtin___memset_chk (data, 'A', size, __builtin_object_size (data, 0));
+        ft_memmove(dst, data, size);
+        exit(TEST_SUCCESS);
+*/
