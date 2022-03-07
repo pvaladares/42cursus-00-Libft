@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:15 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 11:06:43 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:05:17 by pv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,12 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sign = -sign;
+		if (*str == '-')
+			sign = -sign;
 		str++;
 	}
-	if (*str == '+')
-		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		result = (result * 10) + (*str - '0');
