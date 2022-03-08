@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pv <pv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:46:53 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/08 00:19:34 by pv               ###   ########.fr       */
+/*   Updated: 2022/03/08 14:39:13 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = aux;
 	}
-	*lst = 0;
+	*lst = NULL;
 }

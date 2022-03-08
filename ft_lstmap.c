@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:50:44 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/07 18:58:08 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:40:41 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*elem;
 
 	if (!lst)
-		return (0);
+		return (NULL);
 	new_lst = 0;
 	while (lst)
 	{
@@ -46,7 +46,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!elem)
 		{
 			ft_lstclear(&new_lst, del);
-			return (0);
+			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, elem);
 		lst = lst->next;

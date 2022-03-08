@@ -6,7 +6,7 @@
 #    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/08 13:29:43 by pvaladar         ###   ########.fr        #
+#    Updated: 2022/03/08 15:40:58 by pvaladar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ CC			= cc
 
 # "submit a Makefile which will compile your source files to the required output with the flags -Wall, -Wextra and -Werror"
 # "Place all your files at the root of your repository"
-CFLAGS		= -Wall -Wextra -Werror -O2
+CFLAGS		= -Wall -Wextra -Werror
 
 # "You must use the command ar to create your library."
-LIB1		= ar rc
+LIB1		= ar rcs
 LIB2		= ranlib
 
 # =============================================================================
@@ -91,26 +91,27 @@ B_OBJS	=	${BONUS:.c=.o}
 # =============================================================================
 
 # "Your Makefile must at least contain the rules $(NAME), all, clean, fclean and re."
-# "NAME, all, clean, fclean, re" @ page 6/16
+
+# Sample:
+# cc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
+#
+# -c         Only run preprocess, compile, and assemble steps
+# $<		 The name of the first prerequisite.
+# -o <file>	 Write output to <file>
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+# Compile the sources (*.c) to object files (*.o)
+# Then generate a library file
+# 'nm libft.a' to check content
 ${NAME}:	${OBJS}
 			${LIB1} ${NAME} ${OBJS}
 			${LIB2} ${NAME}
 
+# "NAME, all, clean, fclean, re" @ page 6/16
 NAME:		${NAME}
 
 all:		$(NAME)
-
-.c.o:		${CC} ${CFLAGS} ${<:.c=.o}
-# Sample:
-# cc -Wall -Wextra -Werror   -c -o ft_isalpha.o ft_isalpha.c
-#
-# $<		 The name of the first prerequisite.
-# -c         Only run preprocess, compile, and assemble steps
-# -o <file>	 Write output to <file>
-
-# Compile the sources (*.c) to object files (*.o)
-# Then generate a library file
-# Make an index of the libraries
 
 # Clean object files (*.o)
 clean:
@@ -125,11 +126,11 @@ fclean: 	clean
 re:			fclean all
 
 # "To turn in bonuses to your project, you must include a rule bonus to your Makefile"
-bonus:		${OBJS} ${B_OBJS}
-			${LIB1} ${NAME} ${OBJS} ${B_OBJS}
-			${LIB2} ${NAME}
+# "Makefile must not relink" (https://42born2code.slack.com/archives/CMX2R5JSW/p1634727271200100?thread_ts=1634724450.199600&cid=CMX2R5JSW)
+bonus:		${B_OBJS}
+			@make OBJS="$(B_OBJS)" $(NAME)
 
 rebonus:	fclean bonus
 
 # .PHONY rule in order to avoid relinking
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: NAME all clean fclean re bonus rebonus
