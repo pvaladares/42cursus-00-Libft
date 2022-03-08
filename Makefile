@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pv <pv@student.42.fr>                      +#+  +:+       +#+         #
+#    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/08 00:31:47 by pv               ###   ########.fr        #
+#    Updated: 2022/03/08 13:29:43 by pvaladar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,10 +91,12 @@ B_OBJS	=	${BONUS:.c=.o}
 # =============================================================================
 
 # "Your Makefile must at least contain the rules $(NAME), all, clean, fclean and re."
-
+# "NAME, all, clean, fclean, re" @ page 6/16
 ${NAME}:	${OBJS}
 			${LIB1} ${NAME} ${OBJS}
 			${LIB2} ${NAME}
+
+NAME:		${NAME}
 
 all:		$(NAME)
 
