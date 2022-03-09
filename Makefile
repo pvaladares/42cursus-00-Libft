@@ -125,7 +125,7 @@ re		:	fclean all
 
 # "To turn in bonuses to your project, you must include a rule bonus to your Makefile"
 # "Makefile must not relink" (https://42born2code.slack.com/archives/CMX2R5JSW/p1634727271200100?thread_ts=1634724450.199600&cid=CMX2R5JSW)
-bonus	:	$(OBJS_MAND) $(OBJS_BONUS) libft.h
+bonus	:	$(OBJS_MAND) $(OBJS_BONUS)
 			$(LIB1) $(NAME) $(OBJS_BONUS) $(OBJS_MAND)
 
 #bonus	:	#$(OBJS_BONUS)
