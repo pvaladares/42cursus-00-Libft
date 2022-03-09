@@ -6,7 +6,7 @@
 #    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/09 17:40:04 by pvaladar         ###   ########.fr        #
+#    Updated: 2022/03/09 18:41:31 by pvaladar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ RM		= /bin/rm -f
 CC		= cc
 
 # "submit a Makefile which will compile your source files to the required output with the flags -Wall, -Wextra and -Werror"
-CFLAGS	= -Wall -Wextra -Werror#-O3 -fsanitize=address
+CFLAGS			= -Wall -Wextra -Werror
+EXTRA_CFGLAGS	= -O2 -fsanitize=address
 
 # "You must use the command ar to create your library."
 LIB1	= ar -rcs
@@ -109,7 +110,7 @@ NAME	:	$(NAME)
 #	-o <file>		Write output to <file>
 #	$< and $@		https://www.gnu.org/software/make/manual/make.html#Automatic-Variables
 %.o		:	%.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) ${EXTRA_CFGLAGS} -c $< -o $@
 
 # Clean object files (*.o)
 clean	:	
@@ -125,11 +126,8 @@ re		:	fclean all
 
 # "To turn in bonuses to your project, you must include a rule bonus to your Makefile"
 # "Makefile must not relink" (https://42born2code.slack.com/archives/CMX2R5JSW/p1634727271200100?thread_ts=1634724450.199600&cid=CMX2R5JSW)
-bonus	:	$(OBJS_MAND) $(OBJS_BONUS)
-			$(LIB1) $(NAME) $(OBJS_BONUS) $(OBJS_MAND)
-
-#bonus	:	#$(OBJS_BONUS)
-#			#@make OBJS_MAND="$(OBJS_MAND) $(OBJS_BONUS)" $(NAME)
+bonus	:	$(OBJS_BONUS)
+			@make OBJS_MAND="$(OBJS_MAND) $(OBJS_BONUS)" $(NAME)
 
 rebonus	:	fclean bonus
 
