@@ -6,7 +6,7 @@
 #    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/09 18:41:31 by pvaladar         ###   ########.fr        #
+#    Updated: 2022/03/09 18:50:22 by pvaladar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ CC		= cc
 
 # "submit a Makefile which will compile your source files to the required output with the flags -Wall, -Wextra and -Werror"
 CFLAGS			= -Wall -Wextra -Werror
-EXTRA_CFGLAGS	= -O2 -fsanitize=address
 
 # "You must use the command ar to create your library."
 LIB1	= ar -rcs
@@ -110,7 +109,7 @@ NAME	:	$(NAME)
 #	-o <file>		Write output to <file>
 #	$< and $@		https://www.gnu.org/software/make/manual/make.html#Automatic-Variables
 %.o		:	%.c
-			$(CC) $(CFLAGS) ${EXTRA_CFGLAGS} -c $< -o $@
+			$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean object files (*.o)
 clean	:	

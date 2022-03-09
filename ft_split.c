@@ -6,7 +6,7 @@
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:08:40 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 17:02:44 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/09 19:15:20 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ static char	*create_word(char *str, char c)
 	i = 0;
 	len_word = find_word_length(str, c);
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
+	if (!word)
+		return (NULL);
 	while (i < len_word)
 	{
 		word[i] = str[i];
