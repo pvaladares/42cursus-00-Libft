@@ -6,7 +6,7 @@
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:27:39 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 12:28:34 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:11:45 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && c != *s)
+	if ((unsigned char)c == 0)
+	{
+		while (*s)
+			s++;
+		return ((char *) s);
+	}
+	while (*s)
+	{
+		if ((unsigned char)c == *s)
+			return ((char *) s);
 		s++;
-	if (c == *s)
-		return ((char *)s);
+	}
 	return (NULL);
 }

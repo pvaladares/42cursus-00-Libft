@@ -6,7 +6,7 @@
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:30:29 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 12:07:30 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/09 13:28:30 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+// "Some of the functions’ prototypes you have to redo use the ’restrict’ 
+//	qualifier."
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 

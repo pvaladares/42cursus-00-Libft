@@ -6,7 +6,7 @@
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:31:43 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 12:34:04 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/09 14:12:34 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@
 
 #include "libft.h" // size_t is defined in header <stdlib.h>
 
+// "Some of the functions’ prototypes you have to redo use the ’restrict’ 
+//	qualifier."
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

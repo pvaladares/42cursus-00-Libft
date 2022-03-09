@@ -6,7 +6,7 @@
 /*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:40:59 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 13:47:39 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:07:03 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,22 @@
 //      The functions strchr() and strrchr() return a pointer to the located 
 //		character, or NULL if the character does not appear in the string.
 
-#include "libft.h"
+#include "libft.h" // NULL definition
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*aux;
+	const char	*str;
 
-	aux = s + ft_strlen(s);
-	while (*aux != *s && *aux != c)
-		aux--;
-	if (*aux == c)
-		return ((char *)aux);
+	str = s;
+	while (*s != '\0')
+		s++;
+	if (c == 0)
+		return ((char *)s);
+	while (s >= str)
+	{
+		if (*s == (const char)c)
+			return ((char *)s);
+		s--;
+	}
 	return (NULL);
 }
