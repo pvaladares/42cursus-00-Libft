@@ -1,5 +1,4 @@
 # Other files
-*.pdf
 .DS_Store
 buffer/*
 ongoing/*
