@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: pv <pv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/09 18:50:22 by pvaladar         ###   ########.fr        #
+#    Updated: 2022/03/09 20:33:38 by pv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RM		= /bin/rm -f
 CC		= cc
 
 # "submit a Makefile which will compile your source files to the required output with the flags -Wall, -Wextra and -Werror"
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 # "You must use the command ar to create your library."
 LIB1	= ar -rcs
@@ -70,8 +70,8 @@ OBJS_MAND	=	${SRCS_MAND:.c=.o}
 #	BONUS PART
 # =============================================================================
 
-# "Bonuses must be in a different file _bonus.{c/h} if the subject does not specify anything else."
-# "Turn in files Makefile, libft.h, ft_*.c"
+# From Common Instructions: "Bonuses must be in a different file _bonus.{c/h} if the subject does not specify anything else."
+# From Mandatory part: "Turn in files Makefile, libft.h, ft_*.c"
 SRC_BONUS	=	ft_lstadd_front.c	\
 				ft_lstnew.c			\
 				ft_lstsize.c		\
@@ -89,19 +89,17 @@ OBJS_BONUS	=	${SRC_BONUS:.c=.o}
 # =============================================================================
 
 # "Your Makefile must at least contain the rules $(NAME), all, clean, fclean and re."
+# "NAME, all, clean, fclean, re" @ page 6/16
 
 # Compile the sources (*.c) to object files (*.o)
-# Then generate a library file
+# Then generate a library file and index it
 # 'nm libft.a' to check content
 $(NAME)	:	$(OBJS_MAND)
 			$(LIB1) $(NAME) $(OBJS_MAND)
 			$(LIB2) $(NAME)
 
-# all is second rules so $NAME will show message library filename 'make: `libft.a' is up to date.' when trying to relink
+# 'all' is the second rule so 'libft.a' (NAME) will show message library filename 'make: `libft.a' is up to date.' when trying to relink
 all		:	$(NAME)
-
-# "NAME, all, clean, fclean, re" @ page 6/16
-NAME	:	$(NAME)
 
 # Sample:
 # cc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
@@ -113,7 +111,7 @@ NAME	:	$(NAME)
 
 # Clean object files (*.o)
 clean	:	
-			$(RM) ${OBJS_MAND} ${OBJS_BONUS}
+			$(RM) $(OBJS_MAND) $(OBJS_BONUS)
 
 # Clean object files (*.o) and the binary file
 fclean	:	clean
@@ -131,4 +129,4 @@ bonus	:	$(OBJS_BONUS)
 rebonus	:	fclean bonus
 
 # .PHONY rule in order to avoid relinking
-.PHONY	:	all NAME clean fclean re bonus rebonus
+.PHONY	:	all clean fclean re bonus rebonus
