@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:40:59 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/09 15:07:03 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:28:16 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 //		The terminating null character is considered to be part of the string; 
 //		therefore if c is ‘\0’, the functions locate the terminating ‘\0’.
 //
-//      The strrchr() function is identical to strchr(), except it locates
-//		the last occurrence of c.
+//      The strrchr() function is identical to strchr(), except it locates the 
+//		last occurrence of c.
 //
 // RETURN VALUES
 //      The functions strchr() and strrchr() return a pointer to the located 
@@ -44,14 +44,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*str;
+	const char	*aux;
 
-	str = s;
-	while (*s != '\0')
+	aux = s;
+	while (*s)
 		s++;
-	if (c == 0)
+	if (c == '\0')
 		return ((char *)s);
-	while (s >= str)
+	while (s >= aux)
 	{
 		if (*s == (const char)c)
 			return ((char *)s);

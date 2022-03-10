@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:51:25 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:59:33 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:56:40 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

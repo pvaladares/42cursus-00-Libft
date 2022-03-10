@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:40:19 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/16 16:40:20 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:41:07 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

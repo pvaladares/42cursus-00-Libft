@@ -3,22 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:12:52 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/09 13:27:36 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:51:14 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// Includes, all the headers required by the project
+
 # include <stdlib.h> // definition of size_t and NULL (e.g.: ft_memset)
 # include <limits.h> // definition of INT_MAX (ft_atoi)
 # include <errno.h> // definition of error codes (e.g.: ft_calloc)
-# include <unistd.h> // ft_putchar_fd
+# include <unistd.h> // definition of write (e.g.: ft_putchar_fd)
 
 // Part 1 - Libc functions (ordered as shown in the subject file)
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -44,6 +47,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 // Part 2 - Additional functions
+
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -57,11 +61,13 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 // Bonus part
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

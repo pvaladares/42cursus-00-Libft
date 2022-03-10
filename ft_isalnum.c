@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:35 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 11:19:17 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:37:47 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@
 int	ft_isalnum(int c)
 {
 	return ((c >= '0' && c <= '9')
-		|| (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'));
+		|| (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

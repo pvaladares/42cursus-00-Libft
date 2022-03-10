@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:44:17 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/08 14:37:44 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:15:20 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

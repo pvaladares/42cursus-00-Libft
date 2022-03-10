@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:23:44 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 17:21:06 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:55:52 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //					| the value of the parameter ’content’. The variable
 //					| ’next’ is initialized to NULL.
 
-#include "libft.h"
+#include "libft.h" // t_list and NULL definitions
 
 t_list	*ft_lstnew(void *content)
 {
@@ -29,10 +29,7 @@ t_list	*ft_lstnew(void *content)
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
-	{
-		errno = ENOMEM;
 		return (NULL);
-	}
 	new->content = content;
 	new->next = NULL;
 	return (new);

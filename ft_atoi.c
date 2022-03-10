@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:38:15 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/08 14:12:40 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:25:11 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:30:29 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/09 13:28:30 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:50:04 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

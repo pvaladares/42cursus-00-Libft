@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:40:05 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 11:20:36 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:39:17 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

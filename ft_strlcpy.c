@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 10:53:14 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/09 13:29:01 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:10:16 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

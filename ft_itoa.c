@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 15:28:34 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 11:25:07 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:39:54 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ft_len(long n)
 	return (i);
 }
 
-// Function takes an int and converts it to a null-terminated string
+// Function takes an 'int' and converts it to a null-terminated string
 char	*ft_itoa(int nbr)
 {
 	char	*str;

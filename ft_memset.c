@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:40:11 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 12:27:31 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:31:02 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

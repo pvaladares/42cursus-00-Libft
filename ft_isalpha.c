@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:08:06 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/02/22 11:19:27 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:38:10 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 18:12:40 by pvaladar          #+#    #+#              #
-#    Updated: 2022/03/10 10:23:59 by pvaladar         ###   ########.fr        #
+#    Updated: 2022/03/10 16:00:53 by pvaladar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,3 +130,5 @@ rebonus	:	fclean bonus
 
 # .PHONY rule in order to avoid relinking
 .PHONY	:	all clean fclean re bonus rebonus
+
+# More info @ https://github.com/pvaladares/42cursus-00-Libft

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvaladar <pvaladar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: pvaladar <pvaladar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:39:58 by pvaladar          #+#    #+#             */
-/*   Updated: 2022/03/08 14:13:08 by pvaladar         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:53:09 by pvaladar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // External functs. | None
 // Description      | Returns the last node of the list.
 
-#include "libft.h"
+#include "libft.h" // t_list and NULL definitions
 
 t_list	*ft_lstlast(t_list *lst)
 {
